@@ -3,114 +3,94 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Happy Birthday Bacha ❤️</title>
+  <title>Happy Birthday, Bacha ❤️</title>
   <style>
     body {
       margin: 0;
       padding: 0;
-      background: linear-gradient(to right, #ff9a9e, #fad0c4);
+      background: linear-gradient(to right, #ff758c, #ff7eb3);
       font-family: 'Segoe UI', sans-serif;
-      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: #fff;
+      overflow: hidden;
       text-align: center;
     }
     h1 {
-      font-size: 2.5em;
-      color: #fff;
-      margin-top: 60px;
+      font-size: 3em;
       animation: fadeIn 2s ease-in-out;
     }
     .typewriter {
-      display: inline-block;
-      overflow: hidden;
-      border-right: .15em solid white;
+      font-size: 1.5em;
       white-space: nowrap;
-      margin: 20px auto;
-      letter-spacing: .1em;
-      animation:
-        typing 4s steps(40, end),
-        blink-caret .75s step-end infinite;
-      font-size: 1.3em;
-      color: #fff;
+      overflow: hidden;
+      border-right: 2px solid white;
       width: 0;
+      animation: typing 5s steps(40, end) forwards, blink .8s infinite;
+      margin-top: 20px;
     }
     @keyframes typing {
       from { width: 0 }
-      to { width: 90% }
+      to { width: 100% }
     }
-    @keyframes blink-caret {
+    @keyframes blink {
       from, to { border-color: transparent }
       50% { border-color: white }
     }
     @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    .romantic-img {
-      margin-top: 40px;
-      width: 90%;
-      max-width: 400px;
-      border-radius: 20px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-      animation: fadeIn 3s ease-in-out;
-    }
-    iframe {
-      margin-top: 40px;
-      width: 100%;
-      max-width: 560px;
-      height: 315px;
-      border: none;
+      from { opacity: 0 }
+      to { opacity: 1 }
     }
     .hearts {
       position: fixed;
       top: 0;
       left: 0;
-      pointer-events: none;
       width: 100%;
       height: 100%;
       z-index: -1;
+      pointer-events: none;
     }
   </style>
 </head>
 <body>
-  <h1>Happy Birthday My Love ❤️</h1>
-  <div class="typewriter">I found a love... for me. Just dive right in... and follow my lead 💞</div>
-
-  <img class="romantic-img" src="https://i.pinimg.com/564x/c6/bf/3a/c6bf3a346d46db9a112b60157d1d91fd.jpg" alt="Romantic Couple">
-
-  <iframe src="https://www.youtube.com/embed/2Vv-BfVoq4g?autoplay=1&mute=0&loop=1&playlist=2Vv-BfVoq4g" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  <h1>Happy Birthday My Love 🎂</h1>
+  <div class="typewriter">You are my favorite reason to smile every day 💖</div>
 
   <canvas class="hearts" id="canvas"></canvas>
 
   <script>
-    // Floating heart animation
+    // Simple floating heart animation
     const canvas = document.getElementById("canvas");
     const ctx = canvas.getContext("2d");
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
     let hearts = [];
-    for (let i = 0; i < 50; i++) {
+    for (let i = 0; i < 60; i++) {
       hearts.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        size: Math.random() * 5 + 2,
-        speed: Math.random() + 0.5
+        size: Math.random() * 4 + 2,
+        speed: Math.random() + 0.3
       });
     }
 
-    function drawHearts() {
+    function draw() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.fillStyle = "rgba(255,105,180,0.6)";
-      hearts.forEach(heart => {
+      ctx.fillStyle = "rgba(255, 192, 203, 0.7)";
+      hearts.forEach(h => {
         ctx.beginPath();
-        ctx.arc(heart.x, heart.y, heart.size, 0, Math.PI * 2);
+        ctx.arc(h.x, h.y, h.size, 0, Math.PI * 2);
         ctx.fill();
-        heart.y -= heart.speed;
-        if (heart.y < 0) heart.y = canvas.height;
+        h.y -= h.speed;
+        if (h.y < 0) h.y = canvas.height;
       });
-      requestAnimationFrame(drawHearts);
+      requestAnimationFrame(draw);
     }
-    drawHearts();
+    draw();
   </script>
 </body>
 </html>
