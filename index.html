@@ -1,124 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Happy Birthday My Love ❤️</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday Bacha ❤️</title>
   <style>
     body {
       margin: 0;
       padding: 0;
-      background: linear-gradient(to right, #ffdde1, #ee9ca7);
+      background: linear-gradient(to right, #ff9a9e, #fad0c4);
       font-family: 'Segoe UI', sans-serif;
-      color: #fff;
-      overflow: hidden;
+      overflow-x: hidden;
+      text-align: center;
     }
     h1 {
-      text-align: center;
-      margin-top: 50px;
-      font-size: 3em;
-      animation: pop 1.2s ease;
-    }
-    p {
-      text-align: center;
-      font-size: 1.4em;
-      padding: 10px 20px;
+      font-size: 2.5em;
+      color: #fff;
+      margin-top: 60px;
       animation: fadeIn 2s ease-in-out;
     }
-    .heart {
-      position: absolute;
-      width: 100px;
-      animation: float 6s infinite ease-in-out;
-      opacity: 0.7;
+    .typewriter {
+      display: inline-block;
+      overflow: hidden;
+      border-right: .15em solid white;
+      white-space: nowrap;
+      margin: 20px auto;
+      letter-spacing: .1em;
+      animation:
+        typing 4s steps(40, end),
+        blink-caret .75s step-end infinite;
+      font-size: 1.3em;
+      color: #fff;
+      width: 0;
     }
-    .container {
-      margin-top: 30px;
-      text-align: center;
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 90% }
     }
-    .letter {
-      max-width: 90%;
-      margin: 30px auto;
-      background-color: rgba(255, 255, 255, 0.1);
-      padding: 20px;
-      border-radius: 15px;
-      font-size: 1.2em;
+    @keyframes blink-caret {
+      from, to { border-color: transparent }
+      50% { border-color: white }
     }
-    .balloon {
-      width: 60px;
-      position: absolute;
-      top: 100%;
-      animation: fly 10s linear infinite;
-    }
-
-    @keyframes fly {
-      0% {
-        transform: translateY(0) rotate(0deg);
-        opacity: 1;
-      }
-      100% {
-        transform: translateY(-120vh) rotate(360deg);
-        opacity: 0;
-      }
-    }
-
-    @keyframes pop {
-      0% { transform: scale(0); }
-      100% { transform: scale(1); }
-    }
-
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
     }
-
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-20px); }
+    .romantic-img {
+      margin-top: 40px;
+      width: 90%;
+      max-width: 400px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      animation: fadeIn 3s ease-in-out;
     }
-
-    audio {
-      display: none;
+    iframe {
+      margin-top: 40px;
+      width: 100%;
+      max-width: 560px;
+      height: 315px;
+      border: none;
+    }
+    .hearts {
+      position: fixed;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
     }
   </style>
 </head>
 <body>
+  <h1>Happy Birthday My Love ❤️</h1>
+  <div class="typewriter">I found a love... for me. Just dive right in... and follow my lead 💞</div>
 
-  <audio autoplay loop>
-    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
-  </audio>
+  <img class="romantic-img" src="https://i.pinimg.com/564x/c6/bf/3a/c6bf3a346d46db9a112b60157d1d91fd.jpg" alt="Romantic Couple">
 
-  <h1>🎂 Happy Birthday My Love 🎂</h1>
-  <p>Even miles apart, you're the closest to my heart 💖</p>
+  <iframe src="https://www.youtube.com/embed/2Vv-BfVoq4g?autoplay=1&mute=0&loop=1&playlist=2Vv-BfVoq4g" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-  <div class="container">
-    <img class="balloon" src="https://i.ibb.co/fxWwSKM/balloon.png" style="left: 10%;">
-    <img class="balloon" src="https://i.ibb.co/fxWwSKM/balloon.png" style="left: 30%;">
-    <img class="balloon" src="https://i.ibb.co/fxWwSKM/balloon.png" style="left: 50%;">
-    <img class="balloon" src="https://i.ibb.co/fxWwSKM/balloon.png" style="left: 70%;">
-    <img class="balloon" src="https://i.ibb.co/fxWwSKM/balloon.png" style="left: 90%;">
-    
-    <div class="letter">
-      <p>
-        Hey jaanu, 💌<br><br>
-        Today is your day — the most beautiful soul I’ve ever known was born today.  
-        I may not be there to hug you, but my heart is hugging you tightly right now.  
-        Every second with you is a blessing.  
-        Your smile is my sunshine, your voice is my favorite music, and your love is my home.  
-        You make me believe in magic, because loving you feels like a dream.  
-        <br><br>
-        Happy Birthday, meri jaan.  
-        May all your dreams come true and may this be your best year yet.  
-        I promise to make all your next birthdays even more special — together.
-        <br><br>
-        I love you forever. 💖
-        <br>
-        — Yours always,  
-        <strong>Sourav</strong>
-      </p>
-    </div>
+  <canvas class="hearts" id="canvas"></canvas>
 
-    <img src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif" alt="Birthday Cake" width="200">
-    <p style="font-size: 1.2em; margin-top: 20px;">Click this link whenever you miss me… I'll always be there. 💘</p>
-  </div>
+  <script>
+    // Floating heart animation
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
 
+    let hearts = [];
+    for (let i = 0; i < 50; i++) {
+      hearts.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        size: Math.random() * 5 + 2,
+        speed: Math.random() + 0.5
+      });
+    }
+
+    function drawHearts() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = "rgba(255,105,180,0.6)";
+      hearts.forEach(heart => {
+        ctx.beginPath();
+        ctx.arc(heart.x, heart.y, heart.size, 0, Math.PI * 2);
+        ctx.fill();
+        heart.y -= heart.speed;
+        if (heart.y < 0) heart.y = canvas.height;
+      });
+      requestAnimationFrame(drawHearts);
+    }
+    drawHearts();
+  </script>
 </body>
 </html>
